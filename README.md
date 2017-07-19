@@ -1,0 +1,2 @@
+# PtrToken
+Simple ethereum token.
