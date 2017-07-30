@@ -23,7 +23,7 @@ contract('GameToken', function(accounts) {
       token = instance;
 
       return token.transfer(secondAccount, 100, {from: firstAccount});
-    }).then(function(balance) {
+    }).then(function() {
       return token.balanceOf.call(secondAccount);
     }).then(function (balance) {
       assert.equal(balance.valueOf(), 100, "100 Game Token wasn't in the second account");
@@ -37,7 +37,7 @@ contract('GameToken', function(accounts) {
       token = instance;
 
       return token.approve(secondAccount, 100, {from: firstAccount});
-    }).then(function(balance) {
+    }).then(function() {
       return token.allowance.call(firstAccount, secondAccount);
     }).then(function (balance) {
       assert.equal(balance.valueOf(), 100, "100 Game Token wasn't in the second account");
@@ -51,7 +51,7 @@ contract('GameToken', function(accounts) {
       token = instance;
 
       return token.transferFrom(firstAccount, secondAccount, 100);
-    }).then(function(balance) {
+    }).then(function() {
       return token.balanceOf.call(secondAccount);
     }).then(function (balance) {
       assert.equal(balance.valueOf(), 100, "100 Game Token wasn't in the second account");
