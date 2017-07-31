@@ -47,6 +47,7 @@ contract GameToken {
     if (_to == 0x0) throw;
     if (balanceOf[_from] < _value) throw;
     if (balanceOf[_to] + _value < balanceOf[_to]) throw;
+    if (_value > allowance[_from][msg.sender]) throw;
     balanceOf[_from] -= _value;
     balanceOf[_to] += _value;
     allowance[_from][msg.sender] -= _value;
