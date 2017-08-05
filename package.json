@@ -1,0 +1,29 @@
+{
+  "name": "gametoken",
+  "version": "1.0.0",
+  "description": "Game token for filp coin game.",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sc0Vu/GameToken.git"
+  },
+  "keywords": [
+    "Ethereum",
+    "Token"
+  ],
+  "author": "sc0Vu <alk03073135@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/sc0Vu/GameToken/issues"
+  },
+  "homepage": "https://github.com/sc0Vu/GameToken#readme",
+  "dependencies": {
+    "zeppelin-solidity": "^1.2.0"
+  }
+}
