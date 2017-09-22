@@ -1,6 +1,6 @@
 {
   "name": "gametoken",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Game token for filp coin game.",
   "main": "truffle.js",
   "directories": {
