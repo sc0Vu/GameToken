@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/sc0Vu/GameToken#readme",
   "dependencies": {
+    "web3": "^1.0.0-beta.24",
     "zeppelin-solidity": "^1.2.0"
   }
 }
