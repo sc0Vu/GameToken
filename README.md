@@ -1,4 +1,5 @@
 # GameToken
+[![Build Status](https://travis-ci.org/sc0Vu/GameToken.svg?branch=master)](https://travis-ci.org/sc0Vu/GameToken)
 
 Simple ethereum token.
 
