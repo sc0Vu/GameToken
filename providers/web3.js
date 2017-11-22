@@ -1,9 +1,8 @@
-var Web3 = require("web3")
-var web3 = new Web3()
-var provider = new web3.providers.HttpProvider("http://geth:8545")
-var assert = require('assert')
+const Web3 = require("web3");
+const web3 = new Web3();
+const provider = new web3.providers.HttpProvider("http://geth:8545");
 
-web3.setProvider(provider)
+web3.setProvider(provider);
 
 module.exports = {
   web3: web3,

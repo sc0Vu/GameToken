@@ -1,4 +1,5 @@
-var web3 = require('./providers/web3')
+const web3 = require('./providers/web3');
+const testRPC = require('./providers/testrpc');
 
 module.exports = {
   networks: {
@@ -11,6 +12,10 @@ module.exports = {
       from: web3.account,
       network_id: "*",
       provider: web3.web3.currentProvider
+    },
+    test: {
+      network_id: "*",
+      provider: testRPC
     }
   }
 }
