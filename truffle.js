@@ -1,4 +1,4 @@
-const web3 = require('./providers/web3');
+const private = require('./providers/private');
 const testRPC = require('./providers/testrpc');
 
 module.exports = {
@@ -6,12 +6,12 @@ module.exports = {
     development: {
       host: "testrpc",
       port: 8545,
-      network_id: "*" // Match any network id
+      network_id: "*"
     },
     private: {
-      from: web3.account,
+      from: private.account,
       network_id: "*",
-      provider: web3.web3.currentProvider
+      provider: private.web3.currentProvider
     },
     test: {
       network_id: "*",
