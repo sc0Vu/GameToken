@@ -21,9 +21,13 @@ Or
 
 # Test
 
-Before test, make sure you have installed truffle and testrpc.
+Before run test, make sure you have installed truffle.
 
-    npm install -g truffle testrpc
+    npm install -g truffle
+
+* Run test with truffle and testrpc.
+
+    npm install -g testrpc
 
 Run testrpc
 
@@ -32,3 +36,21 @@ Run testrpc
 Run test
 
     truffle test
+
+* Run test with private blockchain.
+
+    truffle  test --network private
+
+> Remember to modify providers/private.js
+
+* Run test without install testrpc globally.
+
+    truffle  test --network test
+
+# container
+
+If you want to type host name like testrpc or geth in truffle.js, you can use docker or other virtual service to do.
+
+1. write docker-compose.yml
+
+2. run container
