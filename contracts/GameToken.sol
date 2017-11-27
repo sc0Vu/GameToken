@@ -22,7 +22,7 @@ contract GameToken {
     decimals = decimalUnits;
   }
 
-  function transfer(address _to, uint256 _value) {
+  function transfer(address _to, uint256 _value) public {
     if (_to == 0x0) revert();
     if (balanceOf[msg.sender] < _value) revert();
     if (balanceOf[_to] + _value < balanceOf[_to]) revert();
@@ -32,14 +32,13 @@ contract GameToken {
     Transfer(msg.sender, _to, _value);
   }
 
-  function approve(address _spender, uint256 _value)
-    returns (bool success) {
+  function approve(address _spender, uint256 _value) public returns (bool success) {
     allowance[msg.sender][_spender] = _value;
     Approval(msg.sender, _spender, _value);
     success = true;
   }    
 
-  function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
+  function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
     if (_to == 0x0) revert();
     if (balanceOf[_from] < _value) revert();
     if (balanceOf[_to] + _value < balanceOf[_to]) revert();

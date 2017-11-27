@@ -3,7 +3,6 @@ var MintableSecureGameToken = artifacts.require("./MintableSecureGameToken.sol")
 contract('MintableSecureGameToken', function(accounts) {
   var firstAccount = accounts[0];
   var secondAccount = accounts[1];
-  var thirdAccount = accounts[2];
 
   it("should put 10000 GameToken in the first account", function() {
     var token;
