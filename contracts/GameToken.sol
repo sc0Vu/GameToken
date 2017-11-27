@@ -1,4 +1,4 @@
-pragma solidity ^0.4.4;
+pragma solidity ^0.4.18;
 
 contract GameToken {
   string public standard = 'ERC20';
@@ -14,12 +14,7 @@ contract GameToken {
 
   event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
-  function GameToken(
-    uint256 initialSupply,
-    string tokenName,
-    uint8 decimalUnits,
-    string tokenSymbol
-    ) {
+  function GameToken(uint256 initialSupply, string tokenName, uint8 decimalUnits, string tokenSymbol) public {
     balanceOf[msg.sender] = initialSupply;
     totalSupply = initialSupply;
     name = tokenName;
@@ -28,9 +23,10 @@ contract GameToken {
   }
 
   function transfer(address _to, uint256 _value) {
-    if (_to == 0x0) throw;
-    if (balanceOf[msg.sender] < _value) throw;
-    if (balanceOf[_to] + _value < balanceOf[_to]) throw;
+    if (_to == 0x0) revert();
+    if (balanceOf[msg.sender] < _value) revert();
+    if (balanceOf[_to] + _value < balanceOf[_to]) revert();
+
     balanceOf[msg.sender] -= _value;
     balanceOf[_to] += _value;
     Transfer(msg.sender, _to, _value);
@@ -44,10 +40,11 @@ contract GameToken {
   }    
 
   function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
-    if (_to == 0x0) throw;
-    if (balanceOf[_from] < _value) throw;
-    if (balanceOf[_to] + _value < balanceOf[_to]) throw;
-    if (_value > allowance[_from][msg.sender]) throw;
+    if (_to == 0x0) revert();
+    if (balanceOf[_from] < _value) revert();
+    if (balanceOf[_to] + _value < balanceOf[_to]) revert();
+    if (_value > allowance[_from][msg.sender]) revert();
+
     balanceOf[_from] -= _value;
     balanceOf[_to] += _value;
     allowance[_from][msg.sender] -= _value;
