@@ -1,6 +1,6 @@
 {
   "name": "gametoken",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Game token for filp coin game.",
   "main": "truffle.js",
   "directories": {
@@ -27,7 +27,7 @@
     "ethereumjs-testrpc": "^6.0.3"
   },
   "dependencies": {
-    "web3": "^1.0.0-beta.24",
+    "web3": "^1.0.0-beta2",
     "zeppelin-solidity": "^1.2.0"
   }
 }
