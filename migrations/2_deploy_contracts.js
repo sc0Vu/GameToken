@@ -9,12 +9,12 @@ module.exports = function(deployer, network, accounts) {
 
   now = now.valueOf();
 
-  deployer.deploy(GameToken);
-  deployer.deploy(SecureGameToken);
-  deployer.link(SecureGameToken, MintableSecureGameToken);
-  deployer.deploy(MintableSecureGameToken);
-  deployer.link(MintableSecureGameToken, GameTokenCrowdsale);
+  // deployer.deploy(GameToken, 10000, 'Game Token', 1, 'GT');
+  // deployer.deploy(SecureGameToken, 10000, 'Secure Game Token', 1, 'SGT');
+  // deployer.link(SecureGameToken, MintableSecureGameToken);
+  // deployer.deploy(MintableSecureGameToken, 10000, 'Mintable Game Token', 1, 'MGT');
+  // deployer.link(MintableSecureGameToken, GameTokenCrowdsale);
   deployer.deploy(GameTokenCrowdsale, now, now + 86400, 1, accounts[0]);
   // play with overflow
-  deployer.deploy(OverflowGameToken);
+  // deployer.deploy(OverflowGameToken, 10000, 'Overflow Game Token', 1, 'OGT');
 };
